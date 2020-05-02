@@ -1,0 +1,18 @@
+{
+  "name": "Tenjin",
+  "description" : "add text here",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "src/popup.html",
+    "default_icon": "img/icons/icon.png"
+  },
+  "icons": {
+  },
+  "manifest_version": 2,
+  "permissions": [
+  ],
+  "commands": {
+    "_execute_browser_action": {
+    }
+  }
+}
