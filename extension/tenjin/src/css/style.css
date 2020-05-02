@@ -1,0 +1,26 @@
+:root {
+	--highlight: red;
+}
+
+
+.tenj-underline {
+	width:auto;
+	height:5px;
+	position:relative;
+	top:-7px;
+	background-color: var(--highlight);
+	z-index:-10;
+	filter:opacity(0.5);
+}
+
+/*
+.underline:hover {
+}
+*/
+
+.tenj-word-under {
+	display:inline-block;
+	z-index:1;
+}
+
+/*add to span*/

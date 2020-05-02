@@ -4,12 +4,17 @@
   "version": "1.0",
   "browser_action": {
     "default_popup": "src/popup.html",
-    "default_icon": "img/icons/icon.png"
+    "default_icon": "img/icons/icon16.png"
   },
   "icons": {
+    "16" : "img/icons/icon16.png",
+    "48" : "img/icons/icon16.png"
   },
   "manifest_version": 2,
   "permissions": [
+    "contextMenus",
+    "activeTab",
+    "tabs"
   ],
   "commands": {
     "_execute_browser_action": {
