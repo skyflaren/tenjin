@@ -2,7 +2,6 @@
 	--highlight: red;
 }
 
-
 .tenj-underline {
 	width:auto;
 	height:5px;
@@ -14,13 +13,11 @@
 }
 
 /*
-.underline:hover {
+.tenj-underline:hover {
 }
 */
 
-.tenj-word-under {
+.tenj-word {
 	display:inline-block;
 	z-index:1;
 }
-
-/*add to span*/
