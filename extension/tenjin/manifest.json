@@ -8,7 +8,9 @@
   },
   "icons": {
     "16" : "img/icons/icon16.png",
-    "48" : "img/icons/icon16.png"
+    "32" : "img/icons/icon16.png",
+    "48" : "img/icons/icon16.png",
+    "128" : "img/icons/icon128.png"
   },
   "manifest_version": 2,
   "permissions": [
@@ -26,6 +28,7 @@
   "content_scripts": [{
     "matches": [ "http://*/*", "https://*/*"],
     "css": ["src/css/style.css"],
-    "js": ["src/js/jquery-3.4.1.min.js", "src/js/highlight.js"]
+    "js": ["src/js/jquery-3.4.1.min.js", "src/js/highlight.js"],
+    "run_at": "document_end"
   }]
 }
