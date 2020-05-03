@@ -145,5 +145,5 @@ function redirect() {
     xhr.send();
     */
 
-	window.location.pathname = "/results.html";
+	window.location.pathname = "tenjin/results.html";
 }
