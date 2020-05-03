@@ -15,16 +15,16 @@ var word_scores =[{"1": ["you", "i", "the", "to", "a", "it", "and", "that", "of"
 
 word_scores.forEach(function(obj) {
     db.collection("word_scores").add({
-        1: obj.1,
-        2: obj.2,
-        3: obj.3,
-        4: obj.4, 
-        5: obj.5,
-        6: obj.6,
-        7: obj.7,
-        8: obj.8,
-        9: obj.9,
-        10:obj.10
+        // 1: obj.1,
+        // 2: obj.2,
+        // 3: obj.3,
+        // 4: obj.4, 
+        // 5: obj.5,
+        // 6: obj.6,
+        // 7: obj.7,
+        // 8: obj.8,
+        // 9: obj.9,
+        // 10:obj.10
 
     }).then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
