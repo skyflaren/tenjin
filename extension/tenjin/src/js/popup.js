@@ -7,6 +7,38 @@ const defvocab = {
 			"link" : "https://www.google.ca"
 		}
 	},
+	"green" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
+	"blue" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
+	"red" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
+	"yell" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
 	"chemistry" : {
 		"asdf" : {
 			"link" : "https://www.google.ca"
@@ -21,6 +53,30 @@ const defvocab = {
 		},
 		"wheeep" : {
 			"link" : "https://www.google.ca"
+		},
+		"add" : {
+			"link" : "https://www.google.ca"
+		},
+		"sdf" : {
+			"link" : "https://www.google.ca"
+		},
+		"sfd" : {
+			"link" : "https://www.google.ca"
+		},
+		"efw" : {
+			"link" : "https://www.google.ca"
+		},
+		"ewr" : {
+			"link" : "https://www.google.ca"
+		},
+		"kefo" : {
+			"link" : "https://www.google.ca"
+		},
+		"wejk" : {
+			"link" : "https://www.google.ca"
+		},
+		"emef" : {
+			"link" : "https://www.google.ca"
 		}
 	}
 }
@@ -30,7 +86,7 @@ let vocab = defvocab;
 
 let selected = "";
 
-let stacks, words, colours;
+let stacks, colours;
 const subjects = Object.keys(vocab);
 
 $(document).ready(() => {
@@ -42,15 +98,14 @@ $(document).ready(() => {
 
 
 	stacks = $('.stacks');
-	words = $('.words');
 
 	$('#back').hide();
 
-	fillStacks();
+	fillSubjects();
 	fillPalette();
 });
 
-function fillStacks() {
+function fillSubjects() {
 	for (let s of subjects) {
 		addSub(s);
 	}
@@ -75,14 +130,17 @@ function addSub(sub) {
 
 	div.click(_ => {
 		selected = sub;
-		stacks.hide();
+		// stacks .hide();
+		stacks.empty();
 		fillWords(sub);
 		$('#back').show();
+		stacks.scrollTop(0);
 
 		$('#back').click(_ => {
 			selected = "";
-			words.empty();
-			stacks.show();
+			stacks.empty();
+			stacks.scrollTop(0);
+			fillSubjects();
 			$('#back').hide();
 		});
 	});
@@ -103,7 +161,7 @@ function addWord(word) {
 	// span.addClass('word');
 
 	div.append(span);
-	words.append(div);
+	stacks.append(div);
 
 	div.click(_ => {
 		// selected = word;
