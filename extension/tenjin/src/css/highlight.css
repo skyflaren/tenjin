@@ -1,5 +1,5 @@
 :root {
-	--highlight: red;
+	--highlight: #ffb4b4;
 }
 
 .tenj-underline {
@@ -9,7 +9,6 @@
 	top:-7px;
 	background-color: var(--highlight);
 	z-index:-10;
-	filter:opacity(0.5);
 }
 
 /*

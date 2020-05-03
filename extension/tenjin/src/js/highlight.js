@@ -18,6 +18,12 @@ $(document).ready(_ => {
 	// checkText($('body'));
 })
 
+$(':root').css('--highlight',getStorage('highlighter','#ffb4b4'));
+
+function getStorage(key,def) {
+	return localStorage.getItem(key) == null ? def : localStorage.getItem(key);
+}
+
 
 function checkText(elm) {
 	try {
