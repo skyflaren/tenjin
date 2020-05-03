@@ -90,10 +90,10 @@ var stacks, colours;
 const subjects = Object.keys(vocab);
 
 $(document).ready(() => {
-	// const defcolours = "#fee48a,#fafd9f,#f9b996,#adddff";
+	const defcolours = "#fee48a,#fafd9f,#f9b996,#adddff";
 
 	$(':root').css('--highlight',getStorage('highlighter','#ffb4b4'))
-	colours = localStorage.getItem("colours") == null ? defcolours : localStorage.getItem("colours").split(",");
+	colours = localStorage.getItem("colours") == null ? defcolours.split(',') : localStorage.getItem("colours").split(",");
 
 	// startColours();
 	// colours = defcolours;
