@@ -13,11 +13,14 @@
 }
 
 /*
-.tenj-underline:hover {
+.tenj-word:hover {
+	background-color: var(--highlight);
+	filter:opacity(0.5);
 }
 */
 
 .tenj-word {
 	display:inline-block;
 	z-index:1;
+	position:relative;
 }

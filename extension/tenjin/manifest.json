@@ -29,6 +29,6 @@
     "matches": [ "http://*/*", "https://*/*"],
     "css": ["src/css/style.css"],
     "js": ["src/js/jquery-3.4.1.min.js", "src/js/highlight.js"],
-    "run_at": "document_end"
+    "run_at": "document_idle"
   }]
 }
