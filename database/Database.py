@@ -8,16 +8,16 @@ headers = {
     'x-rapidapi-key': "14cdcd2acdmsh98abc0fc4ca141dp1a145bjsnff1d52d596dc"
     }
 
-print(1)
-print(os.getcwd());
-inp = open("database.txt","r")
-line =""
+inp = open("tenjin\database\database.txt","r")
+line = inp.readline()
+wordData = {}
 
-while(line!=null):
-    line = inp.readLine()
+while(line!=nun):
     conn.request("GET", line, headers=headers)
     res = conn.getresponse()
-    print(os.getcwd());
+    # print(os.getcwd());
     print(type(res));
     data = res.read()
+    wordData[line]= res["ten_degree"] 
     print(data.decode("utf-8"))
+    line = inp.readline()
