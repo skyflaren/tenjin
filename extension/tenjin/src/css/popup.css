@@ -63,10 +63,15 @@ h1 {
 footer {
 	padding-right:10px !important;
 	padding-left:15px !important;
+	background-color: white;
 }
 
-footer > p {
+footer > a {
 	float:right;
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 footer > #back {
@@ -89,4 +94,14 @@ footer > #back {
 	height:15px;
 	border-radius: 15px;
 	margin:5px;
+}
+
+.stacks, .words {
+	max-height:400px;
+	overflow-y: auto;
+	/*overflow-y: overlay;*/
+}
+
+html {
+	/*overflow-y: overlay;*/
 }

@@ -7,6 +7,38 @@ const defvocab = {
 			"link" : "https://www.google.ca"
 		}
 	},
+	"green" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
+	"blue" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
+	"red" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
+	"yell" : {
+		"a" : {
+			"link" : "https://www.google.ca"
+		},
+		"b" : {
+			"link" : "https://www.google.ca"
+		}
+	},
 	"chemistry" : {
 		"asdf" : {
 			"link" : "https://www.google.ca"
@@ -21,36 +53,71 @@ const defvocab = {
 		},
 		"wheeep" : {
 			"link" : "https://www.google.ca"
+		},
+		"add" : {
+			"link" : "https://www.google.ca"
+		},
+		"sdf" : {
+			"link" : "https://www.google.ca"
+		},
+		"sfd" : {
+			"link" : "https://www.google.ca"
+		},
+		"efw" : {
+			"link" : "https://www.google.ca"
+		},
+		"ewr" : {
+			"link" : "https://www.google.ca"
+		},
+		"kefo" : {
+			"link" : "https://www.google.ca"
+		},
+		"wejk" : {
+			"link" : "https://www.google.ca"
+		},
+		"emef" : {
+			"link" : "https://www.google.ca"
 		}
 	}
 }
 
-// let vocab = localStorage.getItem("vocabulary") == "" ? defvocab : JSON.parse(localStorage.getItem("vocabulary"));
+// let vocab = localStorage.getItem("vocabulary") == null ? defvocab : JSON.parse(localStorage.getItem("vocabulary"));
 let vocab = defvocab; 
 
 let selected = "";
 
-let stacks, words, colours;
+var stacks, colours;
 const subjects = Object.keys(vocab);
 
 $(document).ready(() => {
 	// const defcolours = "#fee48a,#fafd9f,#f9b996,#adddff";
-	const defcolours = ["#fee48a", "#fafd9f", "#f9b996", "#adddff"];
 
-	// colours = localStorage.getItem("colours") == "" ? defcolours : JSON.parse(localStorage.getItem("colours"));
-	colours = defcolours;
+	$(':root').css('--highlight',getStorage('highlighter','#ffb4b4'))
+	colours = localStorage.getItem("colours") == null ? defcolours : localStorage.getItem("colours").split(",");
+
+	// startColours();
+	// colours = defcolours;
+	// console.log(colours);
 
 
 	stacks = $('.stacks');
-	words = $('.words');
 
 	$('#back').hide();
 
-	fillStacks();
+	fillSubjects();
 	fillPalette();
 });
 
-function fillStacks() {
+// function startColours() {
+// 	const defcolours = ["#fee48a", "#fafd9f", "#f9b996", "#adddff"];
+// 	chrome.storage.local.get(['colours'], (result) => {
+// 		if (Object.keys(result).length == 0) colours = defcolours;
+// 		else 
+// 		console.log('Value currently is ' + result.key);
+//     });
+// }
+
+function fillSubjects() {
 	for (let s of subjects) {
 		addSub(s);
 	}
@@ -75,14 +142,17 @@ function addSub(sub) {
 
 	div.click(_ => {
 		selected = sub;
-		stacks.hide();
+		// stacks .hide();
+		stacks.empty();
 		fillWords(sub);
 		$('#back').show();
+		stacks.scrollTop(0);
 
 		$('#back').click(_ => {
 			selected = "";
-			words.empty();
-			stacks.show();
+			stacks.empty();
+			stacks.scrollTop(0);
+			fillSubjects();
 			$('#back').hide();
 		});
 	});
@@ -103,7 +173,7 @@ function addWord(word) {
 	// span.addClass('word');
 
 	div.append(span);
-	words.append(div);
+	stacks.append(div);
 
 	div.click(_ => {
 		// selected = word;
@@ -138,18 +208,26 @@ function addSwatch(hex='white',ret=false) {
 				if ($('#palette')[0].children.length >= 9) pal.remove();
 				colours.push(i.val());
 				updateStorage("colours",colours);
+				changeTheme(i.val());
 			});
 		});
-	}
+	} else 
+		pal.click(_ => {
+			changeTheme(pal.css('background-color'));
+		})
 	if (ret) return pal;
 	else $('#palette').append(pal);
 }
 
+function changeTheme(col) {
+	$(':root').css('--highlight',col);
+	updateStorage('highlighter',col);
+}
 
 function updateStorage(key,val) {
 	localStorage.setItem(key,val);
 }
 
 function getStorage(key,def) {
-	return localStorage.getItem(key) == "" ? def : localStorage.getItem(key);
+	return localStorage.getItem(key) == null ? def : localStorage.getItem(key);
 }

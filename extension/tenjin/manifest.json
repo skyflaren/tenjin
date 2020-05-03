@@ -16,13 +16,14 @@
   "permissions": [
     "contextMenus",
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "commands": {
     "_execute_browser_action": {}
   },
   "background": {
-    "scripts": ["src/js/jquery-3.4.1.min.js"],
+    "scripts": ["src/js/jquery-3.4.1.min.js","src/js/background.js"],
     "persistent": false
   },
   "content_scripts": [{
