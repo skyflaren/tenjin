@@ -6,6 +6,7 @@
     --lghtgrey: #F1F1F1;
     --grey: #A5A5A5;
     --black: #3F3F3F;
+    zoom: 150%;
 }
 
 * {
@@ -18,8 +19,13 @@
 
 body{
     margin: 0;
+	/* background-image: url('img/bamboos.jpg'); */
+    /* z-index: -1; */
+	/* overflow: hidden; */
 }
 
 a{
     text-decoration: none;
 }
+
+

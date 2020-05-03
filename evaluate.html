@@ -4,20 +4,68 @@
   <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title> Tenjin </title>
+    <title> tenjin </title>
+	<link rel="icon" type="image/svg" href="img/tenjin-circle.svg">
     <link href="base.css" rel="stylesheet" type="text/css" />
     <link href="navbar.css" rel="stylesheet" type="text/css" />
+    <link href="evaluate.css" rel="stylesheet" type="text/css" />
+	<script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div id="navbar-bkg">
       <div id="navbar">
-        <a href="index.html"><img class="home-logo item-navbar" src="img/tenjin-1-svg.svg"/></a>
-        <a class="item-navbar" href="evaluate.html">Evaluate</a>
-        <a class="item-navbar" href="index.html">Download</a>
+        <a href="index.html"><img class="home-logo item-navbar" src="img/tenjin-circle.svg"/></a>
+        <a class="home-title item-navbar" href="index.html">tenjin</a>
+        <a class="item-navbar" href="evaluate.html">evaluate</a>
+        <a class="item-navbar" href="https://github.com/skyflaren/tenjin">download</a>
       </div>
     </div>
-    <p id="demo"></p>
-    <script src="quiz.js"></script>
+
+
+    <div id="question">
+        <p id="question-word">word</p>
+        <img style="z-index:-2; position: absolute; top: 70px; opacity:0.2; width:100%;" src="img/bamboos.jpg"></img>
+    </div>
+    
+
+	<!-- change id, name -->
+	<!-- <form id="quiz-options" name="words"> -->
+	<div class="form">
+		<div class="choice">
+			<input id="1" type="radio" name="quiz" />
+			<label for="1">one</label>
+		</div>
+		
+		<div class="choice">
+			<input id="2" type="radio" name="quiz" />
+			<label for="2">two</label>
+		</div>
+		
+		<div class="choice">
+			<input id="3" type="radio" name="quiz" />
+			<label for="3">three</label>
+		</div>
+		
+		<div class="choice">
+			<input id="4" type="radio" name="quiz" /> 
+			<label for="4">four</label>
+		</div>
+	</div>
+
+    <div id="progress-bar"></div>
+    <div id="fill"></div>
+
+	<!-- </form> -->
+	<br />
+
+        <img id="submit" src="img/submit.png">
+
+        <!-- <button id="skip" onclick="nextQuestion()">SKIP</button> -->
+        <p id="skip">SKIP</p>
+
+    <div id="text">
+    </div>
+	<script src="quiz.js"></script>
   </body>
 </html>

@@ -1,0 +1,34 @@
+#number{
+    color: var(--drkyellow);
+    font-size: 60vh;
+    z-index: -1;
+    padding-left: 25px;
+    margin: 0px;
+    font-weight: bold;
+
+    opacity: 0.5;
+    position: absolute;
+    top: 5vh;
+}
+
+#congrats{
+    color: var(--black);
+    font-size: 7vh;
+    padding: 150px 0px 0px 30px;
+    margin: 0px;
+
+    position: absolute;
+    top: 5vh;
+    /* z-index: 0; */
+}
+
+#congrats-text{
+    color: var(--grey);
+    font-size: 3vh;
+    padding: 155px 0px 0px 30px;
+    margin: 0px;
+
+    position: absolute;
+    top: 12vh;
+    /* z-index: 0; */
+}
