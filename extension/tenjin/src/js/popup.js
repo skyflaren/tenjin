@@ -1,11 +1,6 @@
 const defvocab = {
 	"calculus" : {
-		"a" : {
-			"link" : "https://www.google.ca"
-		},
-		"b" : {
-			"link" : "https://www.google.ca"
-		}
+		['a']
 	},
 	"green" : {
 		"a" : {
