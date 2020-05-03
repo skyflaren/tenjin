@@ -4,13 +4,13 @@
   "version": "1.0",
   "browser_action": {
     "default_popup": "src/popup.html",
-    "default_icon": "img/icons/icon16.png"
+    "default_icon": "assets/img/icons/icon16.png"
   },
   "icons": {
-    "16" : "img/icons/icon16.png",
-    "32" : "img/icons/icon16.png",
-    "48" : "img/icons/icon16.png",
-    "128" : "img/icons/icon128.png"
+    "16" : "assets/img/icons/icon16.png",
+    "32" : "assets/img/icons/icon16.png",
+    "48" : "assets/img/icons/icon16.png",
+    "128" : "assets/img/icons/icon128.png"
   },
   "manifest_version": 2,
   "permissions": [
