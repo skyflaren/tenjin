@@ -28,7 +28,7 @@ header > img {
 header {
 	width:100%;
 	height:100px;
-	border:1px dashed black;
+	/*border:1px dashed black;*/
 	padding:5%;
 }
 
@@ -40,7 +40,7 @@ h1 {
 	width:100%;
 	/*height:50px;*/
  	padding:25px;
-	border:1px dashed blue;
+	border:1px solid grey;
 	font-size:20px;
 }
 

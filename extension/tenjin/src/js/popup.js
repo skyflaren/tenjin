@@ -1,4 +1,4 @@
-let vocab = {
+const defvocab = {
 	"calculus" : {
 		"a" : {
 			"link" : "https://www.google.ca"
@@ -25,17 +25,27 @@ let vocab = {
 	}
 }
 
+// let vocab = localStorage.getItem("vocabulary") == "" ? defvocab : JSON.parse(localStorage.getItem("vocabulary"));
+let vocab = defvocab; 
+
 let selected = "";
 
-let stacks, words;
+let stacks, words, colours;
 const subjects = Object.keys(vocab);
 
 $(document).ready(() => {
+	// const defcolours = "#fee48a,#fafd9f,#f9b996,#adddff";
+	const defcolours = ["#fee48a", "#fafd9f", "#f9b996", "#adddff"];
+
+	// colours = localStorage.getItem("colours") == "" ? defcolours : JSON.parse(localStorage.getItem("colours"));
+	colours = defcolours;
+
+
 	stacks = $('.stacks');
 	words = $('.words');
 
 	$('#back').hide();
-	
+
 	fillStacks();
 	fillPalette();
 });
@@ -65,8 +75,16 @@ function addSub(sub) {
 
 	div.click(_ => {
 		selected = sub;
-		$('.card-subject').hide();
+		stacks.hide();
 		fillWords(sub);
+		$('#back').show();
+
+		$('#back').click(_ => {
+			selected = "";
+			words.empty();
+			stacks.show();
+			$('#back').hide();
+		});
 	});
 }
 
@@ -93,10 +111,6 @@ function addWord(word) {
 	});
 }
 
-const defcolours = "#fee48a,#fafd9f,#f9b996,#adddff";
-// const defcolours = ["#fee48a", "#fafd9f", "#f9b996", "#adddff"];
-
-let colours = getStorage("colours",defcolours).split(",");
 
 function fillPalette() {
 	for (let col in colours) {
