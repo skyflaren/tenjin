@@ -8,33 +8,34 @@
     --grey: #A5A5A5;
     --black: #3F3F3F;
 }
-
+/*
 .tenj-underline {
 	width:auto;
 	height:5px;
 	position:relative;
 	top:-7px;
-	background-color: var(--highlight);
+	background-color: #f9b996;
 	z-index:-10;
 }
 
-
-
-/*
-.tenj-word:hover {
-	background-color: var(--highlight);
-	filter:opacity(0.5);
-}
 */
 
 .tenj-word {
 	display:inline-block;
 	z-index:1;
 	position:relative;
+	border-bottom: 5px solid var(--highlight);
+	margin-bottom:-5px;
+	box-sizing: border-box;
+	transition: background-color 0.1s ease-out;
 }
 
+.tenj-word:hover {
+	background-color: var(--highlight);
+	transition: background-color 0.1s ease-out;
+}
 
-.popup {
+.tenj-popup {
 	padding:10px;
 	max-height: 210px;
 	border-radius: 10px;
@@ -44,4 +45,18 @@
 	overflow-y: auto;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+}
+
+.tenj-popup h2 {
+	border-bottom: 1px solid #a2a9b1
+	padding: 0em !important;
+	padding-top: 0em !important;
+	font-weight:bold;
+	font-size: 1em;
+	margin-bottom:0.6em;
+}
+
+.tenj-popup ol {
+	margin-left:1em;
+	font-size: 0.8em;
 }
