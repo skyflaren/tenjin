@@ -1,4 +1,4 @@
-let keywords = ["exotic","culinary","domestic","life"];
+let keywords = ["exotic","culinary","domestic","life","tongue"];
 // $(".tenj-word-under").append($("<div></div>").addClass(".tenj-underline"));
 
 // $("span").mouseover(_ => {
