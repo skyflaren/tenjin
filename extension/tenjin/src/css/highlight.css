@@ -27,7 +27,7 @@
 	background-image: linear-gradient(180deg,transparent 0,var(--highlight) 0); 
 	background-position: 0 .9em;
 	background-repeat: no-repeat;
-	transition: all .1s ease-in-out;
+	transition: all .075s ease-in-out;
 }
 
 .tenj-word:hover {
@@ -44,18 +44,23 @@
 	overflow-y: auto;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    z-index: 5;
+    border-color: FFF;
 }
 
 .tenj-popup h2 {
-	border-bottom: 1px solid #a2a9b1
-	padding: 0em !important;
-	padding-top: 0em !important;
+    border-bottom: 1px solid #aa8;
+/*    padding: 0em !important;*/
+    margin-left: 20px;
+    padding-bottom: 8px;
+    padding-top: 0em !important;
 	font-weight:bold;
-	font-size: 1em;
+	font-size: 1.25em;
 	margin-bottom:0.6em;
 }
 
 .tenj-popup ol {
 	margin-left:1em;
 	font-size: 0.8em;
+    padding-right: 5px;
 }
